@@ -66,9 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
         let loginemail = document.getElementById('floatingInput').value;
         let loginpassword = document.getElementById('floatingPassword').value;
         let found = false;
-        // AccountDetails.forEach(element => {
-        //     console.log(element.username);
-        // });
         AccountDetails.forEach(element => {
             if (loginemail === element.username && loginpassword === element.password){
                 found = true;
@@ -76,12 +73,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
          if (found) {
-            alert("Login Scuccess");
+            alert('Login success');
             window.location.href="MainPage.html";
         }
         else {
             alert("Email or Password is incorrect");
         }
+
     }
 
 });
