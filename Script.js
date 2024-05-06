@@ -1,16 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // let showpass = document.getElementById("flexCheckDefault");
-    // showpass.addEventListener('click',()=>{
-    //     var pass = document.getElementById('floatingPassword');
-    //     if(pass.type === "password"){
-    //         pass.type = "text";
-    //     }
-    //     else{
-    //         pass.type = "password";
-    //     }
-    // })
-
 
     let AccountDetails = JSON.parse(localStorage.getItem('account')) || [];
 
@@ -23,6 +12,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if(SignUp){
         SignUp.addEventListener('submit',signupSubmit);
     }
+
+    let showpass = document.getElementById("flexCheckDefault");
+    showpass.addEventListener('click',()=>{
+        var pass = document.getElementById('floatingPassword');
+        if(pass.type === "password"){
+            pass.type = "text";
+        }
+        else{
+            pass.type = "password";
+        }
+    })
 
 
     // ------- SIGN UP LOGIN --------
