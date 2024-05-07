@@ -48,6 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             AccountDetails.push(Account);
             console.log(AccountDetails);
             console.log(Account);
+            alert('New user created');
     
             localStorage.setItem('account',JSON.stringify(AccountDetails));
         }
