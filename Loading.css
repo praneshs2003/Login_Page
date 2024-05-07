@@ -1,0 +1,27 @@
+/* CSS for the circular page loading effect */
+.loading-spinner {
+    position: fixed;
+    top: 30%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    border: 8px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top: 8px solid #fff;
+    width: 60px;
+    height: 60px;
+    -webkit-animation: spin 1s linear infinite; /* Safari */
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+    display: none; /* initially hidden */
+}
+
+/* CSS animation for spinning */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

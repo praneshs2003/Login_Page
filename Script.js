@@ -63,23 +63,42 @@ document.addEventListener('DOMContentLoaded', () => {
     // ---------LOGIN LOGIC ---------
     function submitlogin(event){
         event.preventDefault();
-        let loginemail = document.getElementById('floatingInput').value;
-        let loginpassword = document.getElementById('floatingPassword').value;
-        let found = false;
-        AccountDetails.forEach(element => {
-            if (loginemail === element.username && loginpassword === element.password){
-                found = true;
+        showLoading();
+        setTimeout(()=>{
+            let loginemail = document.getElementById('floatingInput').value;
+            let loginpassword = document.getElementById('floatingPassword').value;
+            let found = false;
+            AccountDetails.forEach(element => {
+                if (loginemail === element.username && loginpassword === element.password){
+                    found = true;
+                }
+            });
+
+            hideLoading();
+
+            if(loginemail == '' || loginpassword == ''){
+                alert('username or password is empty');
             }
-        });
+            else if (found) {
+                window.location.href="MainPage.html";
+                alert('Login success');
+            }
+            else{
+                alert("Email or Password is incorrect");
+            }
 
-         if (found) {
-            alert('Login success');
-            window.location.href="MainPage.html";
-        }
-        else {
-            alert("Email or Password is incorrect");
-        }
+        },2000);
 
+    }
+
+    function showLoading() {
+        // Display loading message or spinner
+        document.getElementById('loading').style.display = 'block';
+    }
+    
+    function hideLoading() {
+        // Hide loading message or spinner
+        document.getElementById('loading').style.display = 'none';
     }
 
 });
